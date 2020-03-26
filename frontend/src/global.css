@@ -44,18 +44,23 @@ button { cursor: pointer; }
     border-radius: 10px;
     display: inline-block;
     text-decoration: none;
-    transition: filter 0.2s;
+    transition: all ease-in-out 0.1s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn:hover { filter: brightness(85%); }
+.btn:hover { transform: perspective(1px) scale(0.98); }
 
 .red_btn { background: #e02041; }
 
 .black_btn { background: #1F2127; }
 
 .link_btn {
+    border: 0;
+    color: #000;
     display: flex;
-    color: #333;
     font-size: 18px;
     margin-top: 30px;
     font-weight: 500;

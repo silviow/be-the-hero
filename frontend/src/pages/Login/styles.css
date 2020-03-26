@@ -6,10 +6,10 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
-.logo { margin-bottom: 40px; }
+.login_container .logo { margin-bottom: 40px; }
 
 .login_container .action_container p { margin-top: 2px; }
 
@@ -25,21 +25,6 @@
     margin-bottom: 30px;
 }
 
-.login_container .form_container form a {
-    display: flex;
-    color: #333;
-    font-size: 18px;
-    margin-top: 30px;
-    font-weight: 500;
-    align-items: center;
-    text-decoration: none;
-    transition: opacity 0.5s;
-}
-
-.login_container .form_container form a svg { margin-right: 8px; }
-
-.login_container .form_container form a:hover { opacity: 0.8; }
-
 .right_container {
     margin-left: 80px;
     margin-bottom: 60px;
@@ -49,11 +34,27 @@
     .login_container {
         height: 100%;
         padding: 80px 40px;
+        align-items: center;
         flex-direction: column;
         justify-content: flex-start;
     }
     
-    .right_container { margin: 60px 0 0 0; }
+    .login_container h1, .login_container p, .login_container h3 {
+        text-align: center;
+    }
 
-    .right_container .heroes { width: 100%; }
+    .login_container .left_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .login_container .left_container .link_btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .login_container .right_container { margin: 60px 0 0 0; }
+
+    .login_container .right_container .heroes { width: 100%; }
 }

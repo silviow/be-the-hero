@@ -23,7 +23,7 @@ form input {
     color: #333;
     padding: 0 18px;
     border-radius: 10px;
-    border: 1px solid #dcdce6;
+    border: 1px solid #ededed;
 }
 
 form input::placeholder {
@@ -52,3 +52,18 @@ button { cursor: pointer; }
 .red_btn { background: #e02041; }
 
 .black_btn { background: #1F2127; }
+
+.link_btn {
+    display: flex;
+    color: #333;
+    font-size: 18px;
+    margin-top: 30px;
+    font-weight: 500;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.5s;
+}
+
+.link_btn svg { margin-right: 8px; }
+
+.link_btn:hover { opacity: 0.8; }

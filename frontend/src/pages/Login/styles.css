@@ -25,6 +25,11 @@
     margin-bottom: 30px;
 }
 
+.login_container .form_container .access_info { 
+    padding: 13px 0;
+    text-align: center;
+}
+
 .right_container {
     margin-left: 80px;
     margin-bottom: 60px;

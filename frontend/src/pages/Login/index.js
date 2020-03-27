@@ -1,11 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 import logo from '../../assets/logo.svg';
 import heroes from '../../assets/heroes.png';
+import api from '../../services/api';
 import './styles.css';
 
 export default function Login() {
+    const [id, setId] = useState("");
+    const [failedLogin, setfailedLogin] = useState(false);
+
+    const history = useHistory();
+
+    async function handleLogin(e) {
+        e.preventDefault();
+
+        try {
+            if (id) {
+                const response = await api.post('/sessions', { id });
+                
+                const encodedId = btoa(btoa(id)).replace('==', '');
+                
+                localStorage.setItem('ngo_id', encodedId);
+                localStorage.setItem('ngo_name', response.data.name);
+
+                history.push('/profile/incidents');
+            }
+        } catch (err) {
+            setfailedLogin(true);
+        }
+    }
+
     return (
         <div className="login_container">
             <div className="left_container">
@@ -16,10 +41,17 @@ export default function Login() {
                     <button className="btn black_btn">Save the day</button>
                 </div>
                 <section className="form_container">
-                    <form>                        
+                    <form onSubmit={handleLogin}>                        
                         <h3>Do you represent an NGO?</h3>
-                        <input placeholder="Enter your NGO ID"></input>
+                        <input type="password" placeholder="Enter your NGO ID" value={id} onChange={e => setId(e.target.value)} />
                         <button type="submit" className="btn red_btn">Login</button>
+                        {
+                            failedLogin && (
+                                <div className="access_info">
+                                    <p>NGO not found.</p>
+                                </div>
+                            )
+                        }
                         <Link to="/register" className="link_btn">
                             <FiLogIn size={16} color="#E02041" />
                             Register

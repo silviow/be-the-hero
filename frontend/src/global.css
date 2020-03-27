@@ -18,12 +18,13 @@ input, button, textarea {
 }
 
 form input {
+    border: 0;
     width: 100%;
     height: 55px;
     color: #333;
     padding: 0 18px;
     border-radius: 10px;
-    border: 1px solid #ededed;
+    box-shadow: 0 0 100px rgba(0,0,0,0.05);
 }
 
 form textarea {
@@ -33,6 +34,11 @@ form textarea {
     min-height: 140px;
     border-radius: 10px;
     border: 1px solid #ededed;
+}
+
+form input:-webkit-autofill,
+form textarea:-webkit-autofill { 
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 form input::placeholder, form textarea::placeholder { color: #bbb; }

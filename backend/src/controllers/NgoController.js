@@ -10,17 +10,19 @@ module.exports = {
     async store(req, res) {
         const { name, email, whatsapp, city, state } = req.body;
 
-        const id = crypto.randomBytes(6).toString('HEX');
+        if (name && email && whatsapp && city && state) {
+            const id = crypto.randomBytes(6).toString('HEX');
 
-        await connection('ngos').insert({
-            id,
-            name,
-            email,
-            whatsapp,
-            city,
-            state,
-        });
+            await connection('ngos').insert({
+                id,
+                name,
+                email,
+                whatsapp,
+                city,
+                state,
+            });
 
-        return res.json({ id });
+            return res.json({ id });
+        }
     },
 }

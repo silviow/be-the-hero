@@ -22,12 +22,14 @@ export default function Register() {
         const data = { name, email, whatsapp, city, state };
 
         try {
-            const response = await api.post('/ngos/new', data);
+            if (name && email && whatsapp && city && state) {
+                const response = await api.post('/ngos/new', data);
 
-            setId(response.data.id);
-            setRegistered(true);
+                setId(response.data.id);
+                setRegistered(true);
+            }
         } catch (err) {
-            console.error(`Something went wrong. Check out the details: ${err}`);
+            console.error(`Something went wrong. ${err}`);
         }
     }
 

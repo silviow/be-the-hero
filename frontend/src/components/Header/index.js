@@ -5,11 +5,13 @@ import logo from '../../assets/logo.svg';
 import './styles.css';
 
 export default function Header() {
+    const ngoName = localStorage.getItem('ngo_name');
+
     return (
         <header className="header">
             <div className="left_content">
                 <img src={logo} alt="Be The Hero" className="logo"/>
-                <span className="welcome_text">Welcome, Association of Something (AoS)</span>
+                <span className="welcome_text">{`Welcome, ${ngoName}`}</span>
             </div>
             <div className="right_content">
                 <Link to="/incidents/new" className="btn black_btn">Register new incident</Link>

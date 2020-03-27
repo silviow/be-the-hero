@@ -64,6 +64,15 @@
 
 .register_container .content .left_content, .register_container .content .right_content { z-index: 2; }
 
+.register_container .content .access_info { 
+    padding: 13px 0;
+    text-align: center;
+    background: #f0f0f5;
+}
+
+.register_container .content .access_info p:not(:first-child) { margin-top: 5px; }
+
+
 .register_container .decorations {
     width: 100%;
     max-width: 1280px;

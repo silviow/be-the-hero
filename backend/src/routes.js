@@ -9,12 +9,12 @@ const routes = express.Router();
 routes.post('/sessions', SessionController.store);
 
 routes.get('/ngos', NgoController.index);
-routes.post('/ngos', NgoController.store);
+routes.post('/ngos/new', NgoController.store);
 
 routes.get('/profile/incidents', ProfileController.index);
 
 routes.get('/incidents', IncidentController.index);
-routes.post('/incidents', IncidentController.store);
+routes.post('/incidents/new', IncidentController.store);
 routes.delete('/incidents/:id', IncidentController.delete);
 
 module.exports = routes;

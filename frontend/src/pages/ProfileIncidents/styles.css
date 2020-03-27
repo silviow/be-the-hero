@@ -3,6 +3,11 @@
     margin: 0 auto;
     max-width: 1180px;
     padding: 60px 40px 80px;
+    background: url('../../assets/heroes.png') no-repeat center;
+    background-position-x: 55%;
+    background-blend-mode: overlay;
+    min-height: calc(100vh - 280px);
+    background-color: rgba(240, 240, 245, 0.99);
 }
 
 .profile_incidents_container h1 { margin-bottom: 30px; }

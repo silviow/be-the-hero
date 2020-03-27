@@ -31,7 +31,7 @@
     min-width: 55px;
     margin-left: 15px;
     transition: all ease-in-out 0.1s;
-    box-shadow: 0 0 30px rgba(0,0,0,0.08);
+    box-shadow: 0 0 30px rgba(0,0,0,0.06);
 }
 
 .header .logout_btn:hover { transform: perspective(1px) scale(0.96); }

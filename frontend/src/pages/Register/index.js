@@ -2,11 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import logo from '../../assets/logo.svg';
+import leftPlant from '../../assets/left_plant.png';
+import rightPlant from '../../assets/right_plant.png';
 import './styles.css';
 
 export default function Register() {
     return (
         <div className="register_container">
+            <div className="decorations">
+                <img className="left_plant" src={leftPlant} alt="" />
+                <img className="right_plant" src={rightPlant} alt="" />
+            </div>
             <div className="content">
                 <section className="left_content">
                     <img className="logo" src={logo} alt="Be The Hero" />

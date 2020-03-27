@@ -26,9 +26,16 @@ form input {
     border: 1px solid #ededed;
 }
 
-form input::placeholder {
-    color: #bbb;
+form textarea {
+    width: 100%;
+    color: #333;
+    padding: 18px;
+    min-height: 140px;
+    border-radius: 10px;
+    border: 1px solid #ededed;
 }
+
+form input::placeholder, form textarea::placeholder { color: #bbb; }
 
 button { cursor: pointer; }
 

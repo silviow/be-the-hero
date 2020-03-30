@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FiTrash2 } from 'react-icons/fi'; 
+import { ProfileIncidentsContainer } from './styles';
 import Header from '../../components/Header';
 import api from '../../services/api';
-import './styles.css';
 
 export default function ProfileIncidents() {
     const [incidents, setIncidents] = useState([]);
@@ -37,7 +37,7 @@ export default function ProfileIncidents() {
     return (
         <>
             <Header />
-            <div className="profile_incidents_container">
+            <ProfileIncidentsContainer>
                 <h1>Your registered incidents</h1>
                 <ul>
                     {
@@ -48,7 +48,7 @@ export default function ProfileIncidents() {
                                 <strong>Description: </strong>
                                 <p>{incident.description}</p>
                                 <strong>Total cost: </strong>
-                                <p>
+                                <p className="total_cost">
                                     {
                                         Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'})
                                             .format(incident.value)
@@ -61,7 +61,7 @@ export default function ProfileIncidents() {
                         ))
                     }
                 </ul>
-            </div>
+            </ProfileIncidentsContainer>
         </>
     );
 }

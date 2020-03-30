@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
+import { LoginContainer } from './styles';
 import logo from '../../assets/logo.svg';
 import heroes from '../../assets/heroes.png';
 import api from '../../services/api';
-import './styles.css';
 
 export default function Login() {
     const [id, setId] = useState("");
@@ -32,7 +32,7 @@ export default function Login() {
     }
 
     return (
-        <div className="login_container">
+        <LoginContainer>
             <div className="left_container">
                 <img className="logo" src={logo} alt="Be The Hero" />
                 <div className="action_container">
@@ -52,16 +52,16 @@ export default function Login() {
                                 </div>
                             )
                         }
-                        <Link to="/register" className="link_btn">
-                            <FiLogIn size={16} color="#E02041" />
-                            Register
-                        </Link>
                     </form>
+                    <Link to="/register" className="link_btn">
+                        <FiLogIn size={16} color="#E02041" />
+                        Register
+                    </Link>
                 </section>
             </div>
             <div className="right_container">
                 <img className="heroes" src={heroes} alt="Heroes" />
             </div>
-        </div>
+        </LoginContainer>
     );
 }

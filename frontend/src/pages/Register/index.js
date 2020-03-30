@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+import { RegisterContainer } from './styles';
 import logo from '../../assets/logo.svg';
 import leftPlant from '../../assets/left_plant.png';
 import rightPlant from '../../assets/right_plant.png';
 import api from '../../services/api';
-import './styles.css';
 
 export default function Register() {
     const [id, setId] = useState("");
@@ -34,7 +34,7 @@ export default function Register() {
     }
 
     return (
-        <div className="register_container">
+        <RegisterContainer>
             <div className="decorations">
                 <img className="left_plant" src={leftPlant} alt="" />
                 <img className="right_plant" src={rightPlant} alt="" />
@@ -69,6 +69,6 @@ export default function Register() {
                     }
                 </form>
             </div>
-        </div>
+        </RegisterContainer>
     );
 }

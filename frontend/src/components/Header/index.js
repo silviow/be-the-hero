@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiPower } from 'react-icons/fi';
+import { HeaderContainer } from './styles.js';
 import logo from '../../assets/logo.svg';
-import './styles.css';
 
 export default function Header() {
     const ngoName = localStorage.getItem('ngo_name');
@@ -16,7 +16,7 @@ export default function Header() {
     }
 
     return (
-        <header className="header">
+        <HeaderContainer>
             <div className="left_content">
                 <img src={logo} alt="Be The Hero" className="logo"/>
                 <span className="welcome_text">{`Welcome, ${ngoName}`}</span>
@@ -27,6 +27,6 @@ export default function Header() {
                     <FiPower size={18} color="#000" />
                 </button>
             </div>
-        </header>
+        </HeaderContainer>
     );
 }

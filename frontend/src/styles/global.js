@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800&display=swap');
-
     * {
         margin: 0;
         padding: 0;
@@ -16,43 +14,41 @@ export default createGlobalStyle`
         font: 400 16px 'Raleway', sans-serif;
     }
 
-    input, button, textarea {
-        font: 400 16px 'Raleway', sans-serif;
-    }
+    input, button, textarea { font: 400 16px 'Raleway', sans-serif; }
 
-    form input {
-        border: 0;
-        width: 100%;
-        height: 55px;
-        color: #333;
-        padding: 0 18px;
-        border-radius: 10px;
-        box-shadow: 0 0 100px rgba(0,0,0,0.05);
-    }
+    form {
+        input {
+            border: 0;
+            width: 100%;
+            height: 55px;
+            color: #333;
+            padding: 0 18px;
+            border-radius: 10px;
+            box-shadow: 0 0 100px rgba(0,0,0,0.05);
+        }
 
-    form textarea {
-        width: 100%;
-        color: #333;
-        padding: 18px;
-        min-height: 140px;
-        border-radius: 10px;
-        border: 1px solid #ededed;
-    }
+        textarea {
+            width: 100%;
+            color: #333;
+            padding: 18px;
+            min-height: 140px;
+            border-radius: 10px;
+            border: 1px solid #ededed;
+        }
 
-    form input:-webkit-autofill,
-    form textarea:-webkit-autofill { 
-        box-shadow: 0 0 0 30px white inset !important;
-    }
+        input:-webkit-autofill,
+        textarea:-webkit-autofill { box-shadow: 0 0 0 30px white inset !important; }
 
-    form input::placeholder, form textarea::placeholder { color: #bbb; }
+        input::placeholder, textarea::placeholder { color: #bbb; }
+    }
 
     button { cursor: pointer; }
 
     .btn {
         border: 0;
+        color: #fff;
         width: 100%;
         height: 55px;
-        color: #fff;
         font-size: 16px;
         font-weight: 700;
         margin-top: 15px;

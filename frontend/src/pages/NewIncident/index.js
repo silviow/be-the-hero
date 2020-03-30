@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './styles.css';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+import { NewIncidentContainer } from './styles';
 import api from '../../services/api';
 import logo from '../../assets/logo.svg';
 import leftPlant from '../../assets/left_plant.png';
@@ -36,7 +36,7 @@ export default function NewIncident() {
     }
 
     return (
-        <div className="new_incident_container">
+        <NewIncidentContainer>
             <div className="decorations">
                 <img className="left_plant" src={leftPlant} alt="" />
                 <img className="right_plant" src={rightPlant} alt="" />
@@ -60,6 +60,6 @@ export default function NewIncident() {
                     <button className="btn red_btn" type="submit">Register new incident</button>
                 </form>
             </div>
-        </div>
+        </NewIncidentContainer>
     );
 }

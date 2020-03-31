@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
+import { FaApple } from 'react-icons/fa';
+import { MdAndroid } from 'react-icons/md';
 import { LoginContainer } from './styles';
 import logo from '../../assets/logo.svg';
 import heroes from '../../assets/heroes.png';
@@ -8,7 +10,10 @@ import api from '../../services/api';
 
 export default function Login() {
     const [id, setId] = useState("");
-    const [failedLogin, setfailedLogin] = useState(false);
+    const [failedLogin, setFailedLogin] = useState(false);
+    const [showLinksToMobileApp, setShowLinksToMobileApp] = useState(false);
+
+    const LinkToMobileApp = "https://github.com/silviow/be-the-hero/tree/master/mobile";
 
     const history = useHistory();
 
@@ -27,7 +32,7 @@ export default function Login() {
                 history.push('/profile/incidents');
             }
         } catch (err) {
-            setfailedLogin(true);
+            setFailedLogin(true);
         }
     }
 
@@ -37,8 +42,21 @@ export default function Login() {
                 <img className="logo" src={logo} alt="Be The Hero" />
                 <div className="action_container">
                     <h1>Join the heroes</h1>
-                    <p>By choosing an incident to help</p>
-                    <button className="btn black_btn">Save the day</button>
+                    {
+                        showLinksToMobileApp ?
+                        <div className="link_to_mobile_app">
+                            <p>Save the day through our <a href={`${LinkToMobileApp}`}>mobile app</a>.</p>
+                            <div className="icons_container">
+                                <a href={`${LinkToMobileApp}/android`}><MdAndroid size={35} color="#E02041" /></a>
+                                <a href={`${LinkToMobileApp}/ios`}><FaApple size={40} color="#E02041" /></a>
+                            </div>
+                        </div>
+                        : 
+                        <>
+                            <p>By choosing an incident to help</p>
+                            <button className="btn black_btn" onClick={() => { setShowLinksToMobileApp(true); }}>Save the day</button>
+                        </>
+                    }
                 </div>
                 <section className="form_container">
                     <form onSubmit={handleLogin}>                        

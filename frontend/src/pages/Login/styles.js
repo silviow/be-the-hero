@@ -17,7 +17,28 @@ export const LoginContainer = styled.div`
             width: 100%;
             max-width: 350px;
 
-            p { margin-top: 2px; }
+            p { margin-top: 3px; }
+
+            .link_to_mobile_app {
+                margin-top: 3px;
+
+                a { color: #000; }
+            }
+
+            .icons_container {
+                display: flex;
+                margin-top: 10px;
+                align-items: center;
+                justify-content: center;
+
+                a:not(:first-child) { margin-left: 3px; }
+
+                svg { transition: all ease-in-out 0.1s; }
+
+                a:hover {
+                    svg { transform: scale(1.08); }
+                }
+            }
         }
 
         .form_container {
@@ -42,7 +63,7 @@ export const LoginContainer = styled.div`
 
     .right_container {
         margin-left: 80px;
-        margin-bottom: 60px;
+        margin-bottom: 20px;
     }
 
     @media (max-width: 1120px) {
